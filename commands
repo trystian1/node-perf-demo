@@ -1,0 +1,8 @@
+node --expose-gc 4.leaking-memory.js
+
+node --inspect 6.cpu-server.js
+chrome://inspect/#devices
+curl localhost:3003
+
+clinic doctor --on-port 'autocannon localhost:3003' -- node cpu-server.js
+clinic flame --on-port 'autocannon localhost:3003' -- node cpu-server.js
